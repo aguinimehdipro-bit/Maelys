@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyeux Anniversaire</title>
+  <style>
+ :root{
+  --bg: #58722f;
+  --card: rgba(255,255,255,0.72);
+  --blue: #4e90f3;
+  --blue2: #cfe2ff;
+  --yellow: #ffe69c;
+  --text: #2f3b2f;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI";
+  background: linear-gradient(180deg, #58722f 0%, var(--bg) 100%);
+  color: var(--text);
+}
+    .section{
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container{
+      width: min(1100px, 100%);
+    }
+
+    .hero, .buttons-box, .final-box{
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.65);
+      padding: 24px;
+    }
+
+    .hero{
+      text-align: center;
+    }
+
+    .hero h1{
+      margin: 0 0 12px;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      color: #3c5a3c;
+      letter-spacing: 1px;
+    }
+
+    .hero p{
+      margin: 0;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .main-photo{
+      width: min(500px, 100%);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+      border: 8px solid rgba(255,255,255,0.65);
+    }
+
+    .buttons-box h2,
+    .final-box h2{
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+    }
+
+    .buttons{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    button{
+      border: none;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #1f2e1f;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.16);
+    }
+
+    .blue{ background: linear-gradient(180deg, var(--blue) 0%, var(--blue2) 100%); }
+    .yellow{ background: linear-gradient(180deg, var(--yellow) 0%, #fff3cd 100%); }
+
+    .final-text{
+      min-height: 240px;
+      outline: none;
+      border: 2px dashed rgba(60,90,60,0.25);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.55);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      color: #3c5a3c;
+    }
+
+    .popup-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 30, 20, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 999;
+    }
+
+    .popup-overlay.show{
+      display: flex;
+    }
+
+    .popup{
+      width: min(900px, calc(100vw - 32px));
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      background: rgba(255,255,255,0.94);
+      border-radius: 34px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      padding: 28px 22px;
+      text-align: center;
+      animation: popIn 0.22s ease forwards;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    @keyframes popIn{
+      from{ transform: scale(0.92); }
+      to{ transform: scale(1); }
+    }
+
+    .popup h3{
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: #3c5a3c;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .popup p{
+      margin: 14px 0 0;
+      font-size: 1.05rem;
+      opacity: 0.85;
+    }
+
+    .close-btn{
+      margin-top: 22px;
+      padding: 12px 18px;
+      background: #cfe2ff;
+      border-radius: 16px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px){
+      .buttons{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container hero">
+      <h1>Joyeux anniversaire Maelys !!!</h1>
+      <p>Madame ne veut rien pour son annive mais on va faire tout le contraire.</p>
+      <img class="main-photo" src="35a771b3-264d-4de2-85dd-d4793e8e3de6.jpg" alt="Photo principale" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container buttons-box">
+      <h2>Car je trouve qu'on devrait le dire plus souvent. Voici quelques messages de personnes qui tiennent à toi et qui sont reconnaissantes de t'avoir dans leur vie</h2>
+      <div class="buttons">
+        <button class="blue" onclick="showPopup(`Coucou ma petite Maelys,
+Je te souhaite un très joyeux anniversaire pour tes 20ans. Tu es une des merveilleuses découvertes cette année pour moi et je suis très heureuse de te connaître. Tu es une personne exceptionnelle de part ta bienveillance, ta luminosité, ta générosité et ta gentillesse incarnée. Je te souhaite le meilleur pour ta 20aine puisse-t-elle être joyeuse et enrichissante à t’en créer des souvenirs inoubliables 🤪
+Une dernière petite chose, crois en toi et en tes rêves les plus fous 🫶
+
+PS : Malte a pour moi été l’une des plus belles aventures passée avec quelqu’un, j’espère de tout cœur que ça ne sera pas la dernière😜
+
+Gros bisou`)">Maia</button>
+
+        <button class="blue" onclick="showPopup(`Coucou ma star, lpb
+Je veux te souhaiter le meilleur des anniversaires qu’il existe en ce jour. Pour moi tu le mérites largement car tu es une personne extraordinaire. Malhereusement, mes mots ne seront jamais assez fort pour décrire ce que je penses de toi. Ton humour (parfois merdique certes), ta joie de vivre, ton soutien indéniable ont donné énormement de sens à ces 2 années de fac passées ensemble.
+Sans toi, rien n’aurait été pareil…
+
+kiss
+Ludo`)">Natasha</button>
+
+        <button class="blue" onclick="showPopup(`Hey hey Maëlys,
+Je te souhaite une merveilleuse 20eme bougie !
+Ça fait certes très peu de temps qu'on se connait mais tu es quelqu'un avec un magnifique sourire, un rire qui envoie que des ondes positives !
+Sincèrement garde cette joie de vivre qui illumine nos journées !
+Je te souhaite le meilleur pour cette 20eme année
+
+La Biz !!`)">Matyas</button>
+
+        <button class="yellow" onclick="showPopup(`Coucou Maëlys,
+
+Je te souhaite tout d’abord de passer un joyeux anniversaire (omg 20 ans déjà !!!) et une très belle journée :). C’est vrai qu’on s’est rencontrées il n'y a pas très longtemps, à la rentrée. Mais j’ai rapidement découvert une personne super gentille mais surtout très douce, autant dans son attitude que dans ses mots. Et surtout, n’oublions pas ton esprit solaire et ta positive attitude en toute circonstance. Tu veilles tout le temps à ce que tes proches soient bien, et sache que c’est ce qui fait de toi une personne précieuse et rare.
+
+Pour tes 20 ans, je te souhaite vraiment de réaliser tous tes rêves (je sais que tu feras une future vétérinaire incroyable, tu as l’âme faites pour ça alors croit en toi). Je te souhaite aussi d’être épanouie dans tous les aspects de ta vie, la bonne santé, et plein de bonnes choses.
+
+Signé : ton duo de choc (Wassila) 💕`)">Wassila</button>
+
+        <button class="blue" onclick="showPopup(`Coucou ma star, lpb
+Je veux te souhaiter le meilleur des anniversaires qu’il existe en ce jour. Pour moi tu le mérites largement car tu es une personne extraordinaire. Malhereusement, mes mots ne seront jamais assez fort pour décrire ce que je penses de toi. Ton humour (parfois merdique certes), ta joie de vivre, ton soutien indéniable ont donné énormement de sens à ces 2 années de fac passées ensemble.
+Sans toi, rien n’aurait été pareil…
+
+kiss
+Ludo`)">Ludovic</button>
+
+<button class="blue" onclick="showPopup(`Maë,
+
+Je te connais depuis tant d’années et pourtant, je n’arrive pas à arrêter d’être fan. On a déjà vécu beaucoup de choses, mais comme tu l’as déjà dit, ce n’est encore que le début.
+
+20 ans, c’est un truc de fou ! En vrai, quand on s’est connus, tu étais plus grande que moi, et maintenant tu es bientôt dentiste (t’sais, le mec con 😭).
+
+Joyeux anniversaire à toi. Tu es mon humaine préférée. Tout le monde te le dit, mais vraiment : ne change pas. Ni ton énergie, ni ta gentillesse. Ne change rien, reste comme tu es.
+
+Tu éclaires nos vies. Merci d’exister. 💚
+
+Léo`)">
+    Léo
+</button>
+        <button class="blue" onclick="showPopup(`Salut Mae joyeux anniversaire !
+Aujourd'hui ça fera presque 18 ans qu'on est meilleurs amis et t'as réussi à me supporter aussi longtemps bravo. Si je devais refaire ces 18 années sans toi ce ne serait évidemment pas la même, car tu sais écouter sans juger et ça c'est exceptionnel, ne change rien.
+Je te souhaite que le meilleur pour l'avenir.
+
+Ethan`)">Ethan</button>
+
+<button class="blue" onclick="showPopup(`Joyeux anniversaire MAELYYYYYYYYYS, je te souhaite une vie remplie de joie et de bonheur. Merci à toi de m'avoir invité à m'asseoir à cette table. Grâce à cela, j'ai pu rencontrer des personnes incroyables. C'est grâce à toi que j'ai pu avoir l'impression d'être un jeune normal, et pour cela, mille mercis. Passe une bonne journée et puisses-tu te construire un chemin dans la vie dont tu seras totalement fière. Moi, je suis convaincu que tu y arriveras.`)">Mehdi</button>      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container final-box">
+      <h2>Et pour finir</h2>
+      <div class="final-text" contenteditable="true">
+On te remercie tous une dernière fois d'être toi, et seulement toi : authentique et magnifique, autant à l'intérieur qu'à l'extérieur. Merci de mettre de la lumière dans nos vies.
+
+Reste toi-même et n'oublie jamais que, peu importe les épreuves que tu traverseras dans la vie, il y aura toujours des personnes derrière toi pour te soutenir et te tirer vers le haut.
+
+Merci Maëlys, merci d'être toi et merci pour tout.
+
+Et encore une fois : joyeux anniversaire ! 🎂💚
+
+On t'aime tous. ✨      </div>
+    </div>
+  </section>
+
+  <div class="popup-overlay" id="popupOverlay" onclick="hidePopup(event)">
+    <div class="popup" onclick="event.stopPropagation()">
+      <h3 id="popupText">Joyeux anniversaire !</h3>
+      <p>que du love ici.</p>
+      <button class="close-btn" onclick="hidePopup(event)">Fermer</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(text){
+      document.getElementById("popupText").textContent = text;
+      document.getElementById("popupOverlay").classList.add("show");
+    }
+
+    function hidePopup(event){
+      if(event) event.preventDefault();
+      document.getElementById("popupOverlay").classList.remove("show");
+    }
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") hidePopup();
+    });
+  </script>
+</body>
+</html>
